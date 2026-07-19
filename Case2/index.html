@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Счётчик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="counter-card" aria-labelledby="page-title">
+        <p class="eyebrow">JavaScript practice</p>
+        <h1 id="page-title">Интерактивный счётчик</h1>
+        <output id="result" class="result" aria-live="polite">0</output>
+        <div class="controls" aria-label="Управление счётчиком">
+            <button id="decreaseButton" class="control-button decrease" type="button" aria-label="Уменьшить значение">−</button>
+            <button id="increaseButton" class="control-button increase" type="button" aria-label="Увеличить значение">+</button>
+        </div>
+        <p id="message" class="message" aria-live="polite"></p>
+        <p class="hint">Диапазон значений: от −10 до 10</p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
