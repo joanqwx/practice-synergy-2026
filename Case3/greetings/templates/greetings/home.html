@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие</title>
+    <link rel="stylesheet" href="{% static 'greetings/style.css' %}">
+</head>
+<body>
+    <main class="greeting-card">
+        <p class="eyebrow">Django 5</p>
+        <h1>Познакомимся?</h1>
+        <p class="description">Введите своё имя, и приложение сохранит его в базе данных.</p>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="field-group">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {% for error in form.name.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        {% if greeting %}
+            <section class="success" aria-live="polite">Здравствуйте, {{ greeting }}!</section>
+        {% endif %}
+    </main>
+</body>
+</html>
+
